@@ -1,5 +1,6 @@
 // Global variables
 let computerChoice;
+let humanChoice;
 
 
 function getComputerChoice() {
@@ -16,3 +17,7 @@ function getComputerChoice() {
     }
   }
   
+  function getHumanChoice(){
+    let humanChoice = prompt("Choose your weapon: rock, paper or scissors?").toLocaleLowerCase();
+    console.log(humanChoice)
+  }
