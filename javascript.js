@@ -16,13 +16,10 @@ function getComputerChoice() {
     return humanChoice;
   }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-console.log(humanSelection);
-console.log(computerSelection);
 
-function playRound(humanSelection, computerSelection){
+
+function playRound(humanSelection, computerSelection,humanScore, computerScore){
 if (humanSelection === "rock" && computerSelection === "scissors" ||
     humanSelection === "paper" && computerSelection === "rock"     ||
     humanSelection === "scissors" && computerSelection === "paper") {
@@ -45,7 +42,9 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
 function playGame(){
 let humanScore = 0;
 let computerScore = 0;
-
-
-  playRound(humanSelection, computerSelection);
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection, humanScore, computerScore);
 }
+
+playGame();
