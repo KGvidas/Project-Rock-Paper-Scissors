@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 
 
 function getComputerChoice() {
@@ -43,4 +40,12 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
     console.log("Computer score: " + computerScore);
 }};
 
-playRound(humanSelection, computerSelection);
+
+
+function playGame(){
+let humanScore = 0;
+let computerScore = 0;
+
+
+  playRound(humanSelection, computerSelection);
+}
