@@ -24,3 +24,23 @@ const computerSelection = getComputerChoice();
 
 console.log(humanSelection);
 console.log(computerSelection);
+
+function playRound(humanSelection, computerSelection){
+if (humanSelection === "rock" && computerSelection === "scissors" ||
+    humanSelection === "paper" && computerSelection === "rock"     ||
+    humanSelection === "scissors" && computerSelection === "paper") {
+      
+      ++humanScore;
+      console.log("You won! " + "your choice was " + humanSelection + " and computer's choice was " + computerSelection)
+      console.log(humanScore);
+      console.log(computerScore);
+} else if (humanSelection === computerSelection) {
+  console.log("It's a tie! " + "your choice was " + humanSelection + " and computer's choice was " + computerSelection)
+} else {
+  ++computerScore;
+    console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+    console.log("Human score: " + humanScore);
+    console.log("Computer score: " + computerScore);
+}};
+
+playRound(humanSelection, computerSelection);
