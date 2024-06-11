@@ -1,5 +1,4 @@
 
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
@@ -22,21 +21,32 @@ function updateScore (humanScore, computerScore){
   console.log("Computer score is: " + computerScore);
 }
 
+function declareWinner(winner, humanSelection, computerSelection) {
+  if (winner === "human") {
+      console.log("You won! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+  } else if (winner === "tie") {
+      console.log("It's a tie! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+  } else {
+      console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+  }
+}
+
 function playRound(humanSelection, computerSelection,humanScore, computerScore){
+  let winner;
 if (humanSelection === "rock" && computerSelection === "scissors" ||
     humanSelection === "paper" && computerSelection === "rock"     ||
     humanSelection === "scissors" && computerSelection === "paper") {
-      ++humanScore;
-      console.log("You won! " + "your choice was " + humanSelection + " and computer's choice was " + computerSelection)
-      updateScore (humanScore, computerScore)
-    } else if (humanSelection === computerSelection) {
-  console.log("It's a tie! " + "your choice was " + humanSelection + " and computer's choice was " + computerSelection)
-  updateScore (humanScore, computerScore)
-} else {
+      winner = "human";
+  } else if (humanSelection === computerSelection) {
+    winner = "tie";
+  } else {
   ++computerScore;
-    console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
-    updateScore (humanScore, computerScore);
-}};
+    winner = "computer";
+} 
+  declareWinner(winner, humanSelection, computerSelection);
+  updateScore(humanScore, computerScore);
+  return { humanScore, computerScore }; 
+};
 
 
 
