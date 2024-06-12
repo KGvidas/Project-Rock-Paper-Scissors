@@ -48,7 +48,7 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
     winner = "computer";
 } 
   declareWinner(winner, humanSelection, computerSelection);
-  
+  updateScore(humanScore, computerScore);
   return { humanScore, computerScore }; 
 };
 
@@ -60,7 +60,6 @@ let computerScore = 0;
 
 for (let round = 1; ((humanScore < 4) && (computerScore < 4)); ++round) {
 playRound(humanScore, computerScore);  
-updateScore(humanScore, computerScore);
 console.log("round is: " + round)
 }
 
