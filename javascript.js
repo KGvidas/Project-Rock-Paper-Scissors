@@ -31,9 +31,16 @@ function declareWinner(winner, humanSelection, computerSelection) {
   }
 }
 
+function incrementScore(winner){
+  if (winner === "human") {
+    ++humanScore;
+} else if (winner === "computer") {
+  ++computerScore;
+}
+}
 
-function playRound(humanScore, computerScore){
-  let winner;
+
+function playRound(humanScore, computerScore, winner){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 if (humanSelection === "rock" && computerSelection === "scissors" ||
@@ -48,18 +55,22 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
     winner = "computer";
 } 
   declareWinner(winner, humanSelection, computerSelection);
-  
-  return { humanScore, computerScore }; 
+  console.log(humanScore), 
+    console.log(computerScore)
+    console.log(winner)
+  return { humanScore, computerScore, winner,}; 
 };
 
 
 
 function playGame(){
+  let winner;
 let humanScore = 0;
 let computerScore = 0;
 
 for (let round = 1; ((humanScore < 4) && (computerScore < 4)); ++round) {
 playRound(humanScore, computerScore);  
+incrementScore(winner);
 updateScore(humanScore, computerScore);
 console.log("round is: " + round)
 }
