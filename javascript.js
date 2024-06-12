@@ -31,12 +31,14 @@ function declareWinner(winner, humanSelection, computerSelection) {
   }
 }
 
+
 function playRound(humanSelection, computerSelection,humanScore, computerScore){
   let winner;
 if (humanSelection === "rock" && computerSelection === "scissors" ||
     humanSelection === "paper" && computerSelection === "rock"     ||
     humanSelection === "scissors" && computerSelection === "paper") {
       winner = "human";
+    ++humanScore;
   } else if (humanSelection === computerSelection) {
     winner = "tie";
   } else {
@@ -60,6 +62,4 @@ playRound(humanSelection, computerSelection, humanScore, computerScore);
 
 playGame();
 
-// Re-work your previous functions or create more helper functions 
-// if necessary. Specifically, you may want to change the return values to something more useful.
 // If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
