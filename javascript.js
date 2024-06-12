@@ -33,6 +33,7 @@ function declareWinner(winner, humanSelection, computerSelection) {
 
 
 function playRound(humanScore, computerScore){
+  let winner;
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 if (humanSelection === "rock" && computerSelection === "scissors" ||
