@@ -31,6 +31,9 @@ function declareWinner(winner, humanSelection, computerSelection) {
   }
 }
 
+function declareRound(round) {
+  console.log("round is: " + round)
+}
 
 function playRound(){
   let winner;
@@ -55,12 +58,10 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playGame(){
-
 for (let round = 1; (round <= 5); round++) {
 playRound();  
-console.log("round is: " + round)
+declareRound(round);
 }
-
 }
 
 
