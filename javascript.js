@@ -32,7 +32,7 @@ function declareWinner(winner, humanSelection, computerSelection) {
 }
 
 
-function playRound(humanScore, computerScore){
+function playRound(){
   let winner;
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
@@ -40,23 +40,21 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
     humanSelection === "paper" && computerSelection === "rock"     ||
     humanSelection === "scissors" && computerSelection === "paper") {
       winner = "human";
-    ++humanScore;
+    humanScore++;
   } else if (humanSelection === computerSelection) {
     winner = "tie";
   } else {
-  ++computerScore;
+  computerScore++;
     winner = "computer";
 } 
   declareWinner(winner, humanSelection, computerSelection);
   updateScore(humanScore, computerScore);
-  return { humanScore, computerScore }; 
 };
 
-
-
-function playGame(){
 let humanScore = 0;
 let computerScore = 0;
+
+function playGame(){
 
 for (let round = 1; (round <= 5); round++) {
 playRound(humanScore, computerScore);  
@@ -68,4 +66,4 @@ console.log("round is: " + round)
 
 playGame();
 
-// If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
+
