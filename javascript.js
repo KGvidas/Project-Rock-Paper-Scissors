@@ -57,7 +57,7 @@ let computerScore = 0;
 function playGame(){
 
 for (let round = 1; (round <= 5); round++) {
-playRound(humanScore, computerScore);  
+playRound();  
 console.log("round is: " + round)
 }
 
