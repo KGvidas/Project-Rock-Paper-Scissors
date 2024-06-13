@@ -17,6 +17,11 @@ function getComputerChoice() {
   
   function getHumanChoice(){
     let humanChoice = prompt("Choose your weapon: rock, paper or scissors?").toLocaleLowerCase();
+    while (humanChoice !== "rock"  &&
+           humanChoice !== "paper" &&
+           humanChoice !== "scissors"){
+            humanChoice = prompt("Please correctly input: rock, paper or scissors?").toLocaleLowerCase();
+        }
     return humanChoice;
   }
 
