@@ -1,3 +1,8 @@
+// Global variables
+let humanScore = 0;
+let computerScore = 0;
+
+
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -54,8 +59,6 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
   updateScore(humanScore, computerScore);
 };
 
-let humanScore = 0;
-let computerScore = 0;
 
 function playGame(){
 for (let round = 1; (round <= 5); round++) {
