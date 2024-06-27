@@ -47,6 +47,18 @@
   }
   /* ----- The CSS Reset END-----  */
 
+   /* ----- Typography mobile ?-----  */
+   h1 {
+    font-size: 28px;
+   }
+   h2 {
+    font-size: 22px;
+   }
+   buttons {
+    font-size: 16px;
+   }
+    /* ----- Typography mobile END?-----  */
+
 /* ----- BASIC FLEXBOX LAYOUT-----  */
 html, body {
     width: 100%;
@@ -83,28 +95,43 @@ head, main, footer {
 .roundInfo {
     margin-bottom: 2em;
 }
+.roundOutcome {
+    padding: 1em;
+}
+.roundExplanation{
+    padding: 0.5em 1em 1em;
+}
 
 /* ----- Round info section END-----  */
 
 /* ----- Boxes Section-----  */
 .boxes{
+    padding: 2em 0;
     display: flex;
     justify-content: space-around;
     border: 1px solid red;
 }
-.playerBox {
-    border: 1px solid red;
-}
-.computerBox{
+.playerBox, .computerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    width: 160px;
+    height: 160px;
     border: 1px solid red;
 }
 /* ----- Boxes Section END-----  */
 
 /* ----- Choices Clickable section-----  */
 .ChoicesClickable{
-    margin: 2em;
-    border: 1px solid red;
+    margin-top: 3em;
     display: flex;
     justify-content: space-around;
+}
+.rock, .paper, .scissors {
+      border: 1px solid red;
+      /* padding: 20px;    */
+      width: 100px;
+      height: 100px;
 }
 /* ----- Choices Clickable section END-----  */
