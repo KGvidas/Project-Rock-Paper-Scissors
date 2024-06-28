@@ -3,7 +3,14 @@ let humanScore = 0;
 let computerScore = 0;
 
 let btnRock = document.querySelector(".rock");
-btnRock.onclick = () => alert("Hello World");
+let btnPaper = document.querySelector(".paper");
+let btnScissors = document.querySelector(".scissors");
+let btn = document.querySelectorAll(".btn");
+
+btn.forEach(element => { 
+  element.addEventListener("click", () => alert("Hello"));
+});
+
 
 
 function getComputerChoice() {
@@ -75,6 +82,6 @@ declareRound(round);
 }
 
 
-playGame();
+// playGame();
 
 
