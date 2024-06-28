@@ -4,7 +4,7 @@ let computerScore = 0;
 
 // Selectors
 let roundOutcome = document.querySelector(".roundOutcome");
-
+let roundExplanation = document.querySelector(".roundExplanation")
 
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
@@ -52,6 +52,10 @@ function declareWinner(winner, humanSelection, computerSelection) {
   }
 }
 
+function choiceExplanation(humanSelection, computerSelection) {
+  roundExplanation.textContent = "Your choice: " + humanSelection + ", Computer's choice: " + computerSelection
+}
+
 // function declareWinner(winner, humanSelection, computerSelection) {
 //   if (winner === "human") {
 //       console.log("You won! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
@@ -82,6 +86,7 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
     winner = "computer";
 } 
   declareWinner(winner, humanSelection, computerSelection);
+  choiceExplanation(humanSelection, computerSelection);
   updateScore(humanScore, computerScore);
 };
 
