@@ -47,10 +47,13 @@ function updateScore (humanScore, computerScore){
 function declareWinner(winner, humanSelection, computerSelection) {
   if (winner === "human") {
   roundOutcome.textContent = "You won!"
+  roundExplanation.textContent = humanSelection + " beats " + computerSelection;
   } else if (winner === "tie") {
     roundOutcome.textContent = "It's a tie!"
+    roundExplanation.textContent = humanSelection + " ties with " + computerSelection;
   } else {
     roundOutcome.textContent = "You lost!"
+    roundExplanation.textContent = humanSelection + " is beaten by " + computerSelection;
   }
 }
 
@@ -59,9 +62,6 @@ function UpdateChoiceBox(humanSelection, computerSelection){
   computerChoiceBox.textContent = computerSelection;
 }
 
-function choiceExplanation(humanSelection, computerSelection) {
-  roundExplanation.textContent = "Your choice: " + humanSelection + ", Computer's choice: " + computerSelection
-}
 
 // function declareWinner(winner, humanSelection, computerSelection) {
 //   if (winner === "human") {
@@ -93,7 +93,6 @@ if (humanSelection === "Rock" && computerSelection === "Scissors" ||
     winner = "computer";
 } 
   declareWinner(winner, humanSelection, computerSelection);
-  choiceExplanation(humanSelection, computerSelection);
   UpdateChoiceBox(humanSelection, computerSelection);
   updateScore(humanScore, computerScore);
 };
