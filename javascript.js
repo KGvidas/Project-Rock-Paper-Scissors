@@ -28,16 +28,6 @@ function getComputerChoice() {
     }
   }
   
-  // function getHumanChoice(){
-  //   let humanChoice = prompt("Choose your weapon: rock, paper or scissors?").toLocaleLowerCase();
-  //   while (humanChoice !== "rock"  &&
-  //          humanChoice !== "paper" &&
-  //          humanChoice !== "scissors"){
-  //           humanChoice = prompt("Please correctly input: rock, paper or scissors?").toLocaleLowerCase();
-  //       }
-  //   return humanChoice;
-  // }
-
 
 function updateScore (humanScore, computerScore){
   console.log("Your score is: " + humanScore);
@@ -63,23 +53,12 @@ function UpdateChoiceBox(humanSelection, computerSelection){
 }
 
 
-// function declareWinner(winner, humanSelection, computerSelection) {
-//   if (winner === "human") {
-//       console.log("You won! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
-//   } else if (winner === "tie") {
-//       console.log("It's a tie! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
-//   } else {
-//       console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
-//   }
-// }
-
 function declareRound(round) {
   console.log("round is: " + round)
 }
 
 function playRound(humanSelection){
   let winner;
-// const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 if (humanSelection === "Rock" && computerSelection === "Scissors" ||
     humanSelection === "Paper" && computerSelection === "Rock"     ||
@@ -96,15 +75,5 @@ if (humanSelection === "Rock" && computerSelection === "Scissors" ||
   UpdateChoiceBox(humanSelection, computerSelection);
   updateScore(humanScore, computerScore);
 };
-
-
-// function playGame(){
-// for (let round = 1; (round <= 5); round++) {
-// playRound();  
-// declareRound(round);
-// }
-// }
-
-// playGame();
 
 
