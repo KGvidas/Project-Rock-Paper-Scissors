@@ -5,8 +5,9 @@ let computerScore = 0;
 
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
-      const fired_button = button.value;
-      alert(fired_button);
+      let humanSelection = button.value;
+      playRound(humanSelection);
+
   });
 });
 
@@ -22,15 +23,15 @@ function getComputerChoice() {
     }
   }
   
-  function getHumanChoice(){
-    let humanChoice = prompt("Choose your weapon: rock, paper or scissors?").toLocaleLowerCase();
-    while (humanChoice !== "rock"  &&
-           humanChoice !== "paper" &&
-           humanChoice !== "scissors"){
-            humanChoice = prompt("Please correctly input: rock, paper or scissors?").toLocaleLowerCase();
-        }
-    return humanChoice;
-  }
+  // function getHumanChoice(){
+  //   let humanChoice = prompt("Choose your weapon: rock, paper or scissors?").toLocaleLowerCase();
+  //   while (humanChoice !== "rock"  &&
+  //          humanChoice !== "paper" &&
+  //          humanChoice !== "scissors"){
+  //           humanChoice = prompt("Please correctly input: rock, paper or scissors?").toLocaleLowerCase();
+  //       }
+  //   return humanChoice;
+  // }
 
 
 function updateScore (humanScore, computerScore){
@@ -52,9 +53,9 @@ function declareRound(round) {
   console.log("round is: " + round)
 }
 
-function playRound(){
+function playRound(humanSelection){
   let winner;
-const humanSelection = getHumanChoice();
+// const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 if (humanSelection === "rock" && computerSelection === "scissors" ||
     humanSelection === "paper" && computerSelection === "rock"     ||
