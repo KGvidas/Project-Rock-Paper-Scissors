@@ -18,11 +18,11 @@ document.querySelectorAll('.btn').forEach(button => {
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
-      return "rock"
+      return "Rock"
     } else if (randomNumber === 1) {
-      return "paper";
+      return "Paper";
     } else {
-      return "scissors";
+      return "Scissors";
     }
   }
   
@@ -74,9 +74,9 @@ function playRound(humanSelection){
   let winner;
 // const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-if (humanSelection === "rock" && computerSelection === "scissors" ||
-    humanSelection === "paper" && computerSelection === "rock"     ||
-    humanSelection === "scissors" && computerSelection === "paper") {
+if (humanSelection === "Rock" && computerSelection === "Scissors" ||
+    humanSelection === "Paper" && computerSelection === "Rock"     ||
+    humanSelection === "Scissors" && computerSelection === "Paper") {
       winner = "human";
     humanScore++;
   } else if (humanSelection === computerSelection) {
