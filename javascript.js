@@ -2,6 +2,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
+let btnRock = document.querySelector(".rock");
+btnRock.onclick = () => alert("Hello World");
 
 
 function getComputerChoice() {
