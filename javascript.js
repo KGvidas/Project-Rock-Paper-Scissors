@@ -2,15 +2,13 @@
 let humanScore = 0;
 let computerScore = 0;
 
-let btnRock = document.querySelector(".rock");
-let btnPaper = document.querySelector(".paper");
-let btnScissors = document.querySelector(".scissors");
-let btn = document.querySelectorAll(".btn");
 
-btn.forEach(element => { 
-  element.addEventListener("click", () => alert("Hello"));
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', () => {
+      const fired_button = button.value;
+      alert(fired_button);
+  });
 });
-
 
 
 function getComputerChoice() {
@@ -74,13 +72,12 @@ if (humanSelection === "rock" && computerSelection === "scissors" ||
 };
 
 
-function playGame(){
-for (let round = 1; (round <= 5); round++) {
-playRound();  
-declareRound(round);
-}
-}
-
+// function playGame(){
+// for (let round = 1; (round <= 5); round++) {
+// playRound();  
+// declareRound(round);
+// }
+// }
 
 // playGame();
 
