@@ -2,6 +2,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
+// Selectors
+let roundOutcome = document.querySelector(".roundOutcome");
+
 
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
@@ -41,13 +44,23 @@ function updateScore (humanScore, computerScore){
 
 function declareWinner(winner, humanSelection, computerSelection) {
   if (winner === "human") {
-      console.log("You won! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+  roundOutcome.textContent = "You won!"
   } else if (winner === "tie") {
-      console.log("It's a tie! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+    roundOutcome.textContent = "It's a tie!"
   } else {
-      console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+    roundOutcome.textContent = "You lost!"
   }
 }
+
+// function declareWinner(winner, humanSelection, computerSelection) {
+//   if (winner === "human") {
+//       console.log("You won! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+//   } else if (winner === "tie") {
+//       console.log("It's a tie! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+//   } else {
+//       console.log("You lost! Your choice was " + humanSelection + " and computer's choice was " + computerSelection);
+//   }
+// }
 
 function declareRound(round) {
   console.log("round is: " + round)
