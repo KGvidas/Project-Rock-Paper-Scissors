@@ -55,10 +55,6 @@ function UpdateChoiceBox(humanSelection, computerSelection){
 }
 
 
-function declareRound(round) {
-  console.log("round is: " + round)
-}
-
 function playRound(humanSelection){
   let winner;
 const computerSelection = getComputerChoice();
