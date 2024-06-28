@@ -68,6 +68,8 @@ function ResetGame(){
   computerScoreBox.textContent = "Computer: 0";
   computerChoiceBox.textContent = "-";
   playerChoiceBox.textContent = "-";
+  humanScore = 0;
+  computerScore = 0;
 }
 
 function playRound(humanSelection){
