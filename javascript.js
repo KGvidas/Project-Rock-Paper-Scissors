@@ -7,6 +7,8 @@ let roundOutcome = document.querySelector(".roundOutcome");
 let roundExplanation = document.querySelector(".roundExplanation");
 let playerChoiceBox = document.querySelector(".playerChoice");
 let computerChoiceBox = document.querySelector(".computerChoice");
+let computerScoreBox = document.querySelector(".computerScore");
+let playerScoreBox = document.querySelector(".playerScore")
 
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
@@ -30,8 +32,8 @@ function getComputerChoice() {
   
 
 function updateScore (humanScore, computerScore){
-  console.log("Your score is: " + humanScore);
-  console.log("Computer score is: " + computerScore);
+  playerScoreBox.textContent = "Player: " + humanScore;
+  computerScoreBox.textContent = "Computer: " + computerScore;
 }
 
 function declareWinner(winner, humanSelection, computerSelection) {
