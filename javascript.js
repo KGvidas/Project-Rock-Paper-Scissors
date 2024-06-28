@@ -54,6 +54,21 @@ function UpdateChoiceBox(humanSelection, computerSelection){
   computerChoiceBox.textContent = computerSelection;
 }
 
+function checkForEnd(humanScore, computerScore){
+  if (humanScore>4 || computerScore>4) {
+    alert("Game is over.\nThe score is:\nPlayer Score: " + humanScore + "\nComputer Score: " + computerScore);
+    ResetGame()
+  }
+}
+
+function ResetGame(){
+  roundOutcome.textContent = "Choose your weapon";
+  roundExplanation.textContent = "First to score 5 points wins the game";
+  playerScoreBox.textContent = "Player: 0";
+  computerScoreBox.textContent = "Computer: 0";
+  computerChoiceBox.textContent = "-";
+  playerChoiceBox.textContent = "-";
+}
 
 function playRound(humanSelection){
   let winner;
@@ -72,6 +87,7 @@ if (humanSelection === "Rock" && computerSelection === "Scissors" ||
   declareWinner(winner, humanSelection, computerSelection);
   UpdateChoiceBox(humanSelection, computerSelection);
   updateScore(humanScore, computerScore);
+  checkForEnd(humanScore, computerScore)
 };
 
 
